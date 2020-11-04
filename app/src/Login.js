@@ -137,7 +137,7 @@ userInputForm = passwordChangeRequired ? passwordResetForm() : loginForm();
   return (
     <article>
       <div className="Login">
-        <h2>Medical Transcription Analysis</h2>
+        <h2>PharmAssess OTC Module</h2>
         {userInputForm}
         {isLoading && <Loading />}
       </div>
