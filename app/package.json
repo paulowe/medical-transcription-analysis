@@ -10,15 +10,17 @@
   },
   "stack": {
     "stackname": "MTA",
-    "region": "%%REGION%%"
+    "region": "us-east-2"
   },
-  "email": "%%USER_EMAIL%%",
+  "email": "backend@pharmassess.ca",
   "scripts": {
     "bootstrap": "AWS_REGION=$npm_package_stack_region USER_EMAIL=$npm_package_email cdk bootstrap --toolkit-stack-name MedicalTranscriptionAnalysisCDKToolkit",
     "build-app": "react-scripts build",
     "compile-stacks": "yarn compile:backend && yarn compile:client",
     "compile:backend": "tsc lib/medical-transcription-analysis-stack.ts --target es2018 --module commonjs --allowjs true",
     "compile:client": "tsc lib/medical-transcription-analysis-client-stack.ts --target es2018 --module commonjs --allowjs true",
+    "getAWSRegionValue": "echo $npm_package_stack_region",
+    "test2": "echo $npm_package_stack_stackname",
     "deploy:backend": "STACKNAME=$npm_package_stack_stackname AWS_REGION=$npm_package_stack_region USER_EMAIL=$npm_package_email cdk deploy --toolkit-stack-name MedicalTranscriptionAnalysisCDKToolkit --require-approval never -v true",
     "deploy:client": "yarn build-app && yarn update-client-stack-variables && AWS_REGION=$npm_package_stack_region STACKNAME=$npm_package_stack_stackname cdk deploy --toolkit-stack-name MedicalTranscriptionAnalysisCDKToolkit --require-approval never -v true -a \"node bin/deploy-client-stack.js\"",
     "deploy": "yarn compile-stacks && yarn bootstrap && yarn deploy:backend && yarn pre-build && yarn deploy:client",
@@ -39,9 +41,10 @@
     "jest": "^24.9.0",
     "ts-jest": "^26.1.0",
     "ts-node": "^8.10.1",
-    "typescript": "~3.7.2"
+    "typescript": "^3.7.5"
   },
   "dependencies": {
+    "@aws-amplify/datastore": "^2.7.2",
     "@aws-cdk/assert": "1.42.0",
     "@aws-cdk/aws-apigateway": "1.42.0",
     "@aws-cdk/aws-cloudfront": "1.42.0",
@@ -58,7 +61,8 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "@types/node": "10.17.5",
-    "aws-amplify": "^2.2.0",
+    "amplify": "^0.0.11",
+    "aws-amplify": "^3.3.7",
     "aws-amplify-react": "^3.1.1",
     "aws-cdk": "1.42.0",
     "aws-sdk": "^2.670.0",
