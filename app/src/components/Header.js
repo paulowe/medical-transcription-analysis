@@ -37,10 +37,10 @@ export default function Header({
             <button onClick={onHideExport}><span />Back</button>
           : null}
 
-          <a href="https://aws.amazon.com/machine-learning/ "><img className={s.logo} src={require('../img/logo_pharmassess.png')} /></a>
+          <a href="https://www.pharmassess.ca"><img className={s.logo} src={require('../img/logo_pharmassess.png')} /></a>
         </div>
         <div className={s.headings}>
-        <h1>Voice Hub</h1> 
+        <h1>Pharmacist Voice Hub</h1> 
         </div>
         <div className={s.right}>
           {stage !== STAGE_SEARCH_EXPORT && stage !== STAGE_SEARCH?
