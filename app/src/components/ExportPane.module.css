@@ -41,7 +41,7 @@
   }
   
   .logo {
-    background: url(../img/logo_acme_01@2x.png) left center no-repeat;
+    background: url(../img/logo_pharmassess.png) left center no-repeat;
     background-size: 16em 5.6em;
     height: 5.6em;
   }
@@ -165,7 +165,7 @@
     }
   
     .logo {
-      content: url(../img/logo_acme_01@2x.png) !important;
+      content: url(../img/logo_pharmassess.png) !important;
     }
   
     .actions {

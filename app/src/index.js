@@ -12,6 +12,11 @@ require("dotenv").config();
 const region = process.env.REACT_APP_region;
 const APIGateway = process.env.REACT_APP_APIGateway;
 console.log(region);
+console.log(APIGateway);
+console.log(process.env.REACT_APP_UserPoolId);
+console.log(process.env.REACT_APP_IdentityPoolId);
+console.log(process.env.REACT_APP_WebAppBucketName);
+
 Amplify.configure({
   Auth: {
     identityPoolId: process.env.REACT_APP_IdentityPoolId,
